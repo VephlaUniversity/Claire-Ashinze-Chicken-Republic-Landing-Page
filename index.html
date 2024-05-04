@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            border: none;
+            padding: 0px;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0px;
+
+        }
+
+
+        .body {
+            background-image: url(https://www.chicken-republic.com/wp-content/uploads/2020/04/ChickenRepublic_FoodPagesBanner-scaled.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 450px;
+            z-index: 1;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .Navigation {
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .Navigation li {
+            display: inline-block;
+            color: white;
+            font-size: large;
+            list-style-type: none;
+            padding: 60px 20px;
+        }
+
+        .Navigation li:hover {
+            border-bottom: 5px solid red;
+        }
+
+        .media {
+            padding-top: 60px;
+            padding-right: 20px;
+        }
+
+        .media:hover {
+            opacity: 0.5;
+        }
+
+        .Navigation button {
+            background-color: red;
+            color: yellow;
+            margin: 40px;
+            height: 90px;
+            font-size: large;
+            padding: 20px;
+            border: 20px;
+            border-bottom-style: solid;
+            display: flex;
+        }
+
+        .Navigation button:hover {
+            background-color: yellow;
+            color: red;
+        }
+
+        .section1 {
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .section1 button {
+            font-size: large;
+            font-weight: 500;
+            padding: 15px;
+            border-radius: 25px;
+            background-color: yellow;
+            color: red;
+            width: 150px;
+            margin: 20px;
+        }
+
+        .section1 button:hover {
+            background-color: red;
+            color: yellow;
+        }
+
+        .section1 li {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .section1 img {
+            width: 45%;
+            height: 45%;
+        }
+
+        .section1 p {
+            font-size: small;
+        }
+
+        .section2 {
+            position: relative;
+        }
+
+        .sub-2 {
+            background-color: red;
+            position: relative;
+            margin-top: 20px;
+            height: 100px;
+
+        }
+
+        .sub-2 img {
+            position: absolute;
+            left: 70px;
+            top: 15px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .sub-2 h1 {
+            color: white;
+            position: absolute;
+            left: 150px;
+            top: 30px;
+            font-weight: bold;
+        }
+
+        .foodmenu {
+            position: relative;
+            margin: 0px 20px;
+        }
+
+        .fried,
+        .jollof,
+        .spag {
+            text-align: center;
+            color: red;
+            position: absolute;
+            padding-top: 20px;
+        }
+
+        .fried img,
+        .jollof img,
+        .spag img {
+            width: 400px !important;
+        }
+
+        .jollof {
+            left: 450px;
+        }
+
+        .spag {
+            left: 900px;
+        }
+
+        .section3 {
+            position: relative;
+            height: 100px;
+            padding-bottom: 0px;
+        }
+
+        .sub-3 {
+            background-color: rgb(250, 145, 7);
+            position: relative;
+            margin-top: 300px;
+            height: 100px;
+
+        }
+
+        .sub-3 img {
+            top: 15px;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            left: 70px;
+        }
+
+        .sub-3 h1 {
+            top: 30px;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 150px;
+        }
+
+        .foodmenu3,
+        .foodmenu5,
+        .foodmenu6,
+        .foodmenu7,
+        .foodmenu8 {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(233, 227, 227, 0.767);
+        }
+
+        .fried3,
+        .jollof3,
+        .spag3 {
+            padding: 20px 0px;
+            text-align: center;
+            color: red;
+        }
+
+        .fried3 img,
+        .jollof3 img,
+        .spag3 img {
+            display: block;
+            width: 400px !important;
+        }
+
+        .jollof3 {
+            left: 450px;
+        }
+
+        .spag3 {
+            left: 900px;
+        }
+
+        .section4 {
+            position: relative;
+        }
+
+        .sub-4 {
+            position: relative;
+            height: 100px;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .sub-4 img {
+            position: absolute;
+            left: 70px;
+            top: 15px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .sub-4 h1 {
+            position: absolute;
+            left: 150px;
+            top: 30px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .section5 {
+            position: relative;
+        }
+
+        .sub-5 {
+            position: relative;
+            margin-top: 300px;
+            height: 100px;
+            background-color: rgb(184, 9, 9);
+        }
+
+        .sub-5 img {
+            position: absolute;
+            left: 70px;
+            top: 15px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .sub-5 h1 {
+            top: 30px;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 150px;
+        }
+
+
+
+        .fried5,
+        .jollof5,
+        .spag5 {
+            padding: 20px 0px;
+            text-align: center;
+            color: red;
+        }
+
+        .fried5 img,
+        .jollof5 img,
+        .spag5 img {
+            display: block;
+            width: 400px !important;
+        }
+
+        .jollof5 {
+            left: 450px;
+        }
+
+        .spag5 {
+            left: 900px;
+        }
+
+        .section6 {
+            position: relative;
+        }
+
+        .sub-6 {
+            position: relative;
+            height: 100px;
+            background-color: red;
+        }
+
+        .sub-6 img {
+            position: absolute;
+            left: 70px;
+            top: 15px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .sub-6 h1 {
+            top: 30px;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 150px;
+        }
+
+
+        .fried6,
+        .jollof6,
+        .spag6 {
+            padding: 20px 0px;
+            color: red;
+            text-align: center;
+        }
+
+        .fried6 img,
+        .jollof6 img,
+        .spag6 img {
+            display: block;
+            width: 400px !important;
+        }
+
+        .jollof6 {
+            left: 450px;
+        }
+
+        .spag6 {
+            left: 900px;
+        }
+
+        .section7 {
+            position: relative;
+        }
+
+        .sub-7 {
+            position: relative;
+            height: 100px;
+            background-color: rgb(250, 145, 7);
+        }
+
+        .sub-7 img {
+            position: absolute;
+            left: 70px;
+            top: 15px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .sub-7 h1 {
+            top: 30px;
+            color: white;
+            position: absolute;
+            left: 150px;
+            font-weight: bold;
+        }
+
+
+
+        .fried7,
+        .jollof7,
+        .spag7 {
+            padding: 20px 0px;
+            text-align: center;
+            color: red;
+        }
+
+        .fried7 img,
+        .jollof7 img,
+        .spag7 img {
+            display: block;
+            width: 400px !important;
+        }
+
+        .jollof7 {
+            left: 450px;
+        }
+
+        .spag7 {
+            left: 900px;
+        }
+
+        .section8 {
+            position: relative;
+        }
+
+        .sub-8 {
+            position: relative;
+            height: 100px;
+            background-color: rgb(185, 11, 11);
+        }
+
+        .sub-8 img {
+            top: 15px;
+            position: absolute;
+            left: 70px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .sub-8 h1 {
+            color: white;
+            position: absolute;
+            left: 150px;
+            top: 30px;
+            font-weight: bold;
+        }
+
+
+
+        .fried8,
+        .jollof8,
+        .chips8,
+        .sweet8,
+        .beverages8 {
+            padding: 20px 0px;
+            text-align: center;
+            color: red;
+        }
+
+        .fried8 img,
+        .jollof8 img,
+        .chips8 img,
+        .sweet8 img,
+        .beverages8 img {
+            display: block;
+            width: 250px !important;
+        }
+
+        .jollof8 {
+            left: 450px;
+        }
+
+        .chips8 {
+            left: 900px;
+        }
+
+        h3:hover {
+            color: yellow;
+            border-bottom: 3px solid red;
+        }
+
+        footer {
+            font-size: large;
+            text-align: center;
+            background-color: red;
+            height: 50px;
+            color: white;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Navigation">
+        <img src="https://www.chicken-republic.com/wp-content/uploads/2021/10/ChickenRepublic_Logo.svg" alt="Logo"
+            width="10%" height="10%">
+        <ul>
+            <li>HOME</li>
+            <li>MENU</li>
+            <li>PROMOS</li>
+            <li>STORE LOCATOR</li>
+            <li>BRAND</li>
+            <li>NEWS</li>
+        </ul>
+        <div class="media">
+            <img src="https://cdn-icons-png.flaticon.com/128/2111/2111392.png" alt="facebook" width="50px"
+                height="40px">
+            <img src="https://cdn-icons-png.flaticon.com/128/2111/2111738.png" alt="twitter" width="40px" height="40px">
+            <img src="https://cdn-icons-png.flaticon.com/128/739/739193.png" alt="instagram" width="40px" height="40px">
+        </div>
+
+        <button style="padding: 10px;"><img src="https://i.postimg.cc/3r0NWWH1/Ch-icon.png"
+                style="border-radius: 50%; width: 40px; margin-right: 10px;">ORDER
+            ONLINE</button>
+    </div>
+    <div class="body">
+    </div>
+    <div class="section1">
+        <button>ORDER NOW</button>
+        <ul>
+            <li>
+                <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon1.png"
+                    alt="value meal">
+                <p>Very Affordable Value Meals</p>
+            </li>
+            <li>
+                <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon2.png"
+                    alt="spiced chicken">
+                <p>Soulfully Spiced Fried Chicken</p>
+            </li>
+            <li>
+                <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon4-1.png"
+                    alt="grilled chicken">
+                <p>Flame Grilled</p>
+                <p>Chicken</p>
+            </li>
+            <li>
+                <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon3.png"
+                    alt="rotisserie chicken">
+                <p>Delicious Rotisserie Chicken</p>
+            </li>
+            <li>
+                <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon5.png"
+                    alt="burger">
+                <p>Burgers, Wraps & Chickwhizz</p>
+            </li>
+            <li>
+                <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon6.png"
+                    alt="tasty sides">
+                <p>Tasty</p>
+                <p>Sides</p>
+            </li>
+            <li>
+                <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon7-2.png"
+                    alt="treats & beverages">
+                <p>Sweet Treats & Beverages</p>
+            </li>
+        </ul>
+    </div>
+    <div class="section2">
+        <div class="sub-2">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon1.png"
+                alt="val meal">
+            <h1>EVERY DAY AFFORDABLE VALUE MEALS</h1>
+        </div>
+    </div>
+    <div class="foodmenu">
+        <div class="fried">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/7-REFUEL-MAX-FRIED-RICE-MEAL.jpg"
+                alt="FRIED RICE">
+            <h3>REFUEL MAX MEAL - FRIED RICE MEAL</h3>
+        </div>
+        <div class="jollof">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/3-REFUEL-SPICY-RICE-MEAL.jpg"
+                alt="JOLLOF RICE">
+            <h3>REFUEL MAX MEAL - JOLLOF RICE MEAL</h3>
+        </div>
+        <div class="spag">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_RefuelSpaghettiMeal.jpg"
+                alt="SPAG">
+            <h3>REFUEL MAX MEAL - SPAGHETTI MEAL</h3>
+        </div>
+    </div>
+    <div class="section3">
+        <div class="sub-3">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon2.png"
+                alt="spiced chicken">
+            <h1>SOULFULLY SPICED FRIED CHICKEN</h1>
+        </div>
+    </div>
+    <div class="foodmenu3">
+        <div class="fried3">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/CHICKEN-PIECES-DARK.jpg"
+                alt="FRIED RICE">
+            <h3>FRIED CHICKEN PIECES</h3>
+        </div>
+        <div class="jollof3">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/10/SPICY-YAM-MEAL-DARK.jpg"
+                alt="JOLLOF RICE">
+            <h3>FRIED CHICKEN AND SPICY YAM</h3>
+        </div>
+        <div class="spag3">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/10/CITIZENS-SPICY-YAM-MEAL-DARK.jpg"
+                alt="SPAG">
+            <h3>POT LOVER MEAL</h3>
+        </div>
+    </div>
+    <div class="section4">
+        <div class="sub-4">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon4-1.png"
+                alt="grilled chicken">
+            <h1>FLAME GRILLED CHICKEN</h1>
+        </div>
+    </div>
+    <div class="foodmenu">
+        <div class="fried">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_FullFlameGrilled.jpg"
+                alt="FRIED RICE">
+            <h3>FULL FLAMED GRILLED CHICKEN</h3>
+        </div>
+        <div class="jollof">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_HalfFlameGrilled-1.jpg"
+                alt="JOLLOF RICE">
+            <h3>HALF FLAMED GRILLED CHICKEN</h3>
+        </div>
+        <div class="spag">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_QuarterFlamerGrilled.jpg"
+                alt="SPAG">
+            <h3>QUARTER FLAMED GRILLED CHICKEN</h3>
+        </div>
+    </div>
+    <div class="section5">
+        <div class="sub-5">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon3.png"
+                alt="rotisserie chicken">
+            <h1>DELICIOUS ROTISSERIE CHICKEN</h1>
+        </div>
+    </div>
+    <div class="foodmenu5">
+        <div class="fried3">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_FullChicken.jpg"
+                alt="FRIED RICE">
+            <h3>WHOLE ROTISSERIE CHICKEN</h3>
+        </div>
+        <div class="jollof5">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_HalfRotisserie.jpg"
+                alt="JOLLOF RICE">
+            <h3>HALF ROTISSERIE CHICKEN</h3>
+        </div>
+        <div class="spag5">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_QuarterRotisserie.jpg"
+                alt="SPAG">
+            <h3>QUARTER ROTISSERIE CHICKEN</h3>
+        </div>
+    </div>
+    <div class="section6">
+        <div class="sub-6">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon5.png"
+                alt="burger">
+            <h1>BURGERS, WRAPS & CHICKWHIZZ</h1>
+        </div>
+    </div>
+    <div class="foodmenu6">
+        <div class="fried3">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2022/08/ChickenRepublic_ChiefBurgerMeal_DARK-scaled.jpg"
+                alt="CHIEF BURGER">
+            <h3>CHIEF BURGER MEAL</h3>
+        </div>
+        <div class="jollof6">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_WrapstarMeal.jpg"
+                alt="WRAPS">
+            <h3>ORIGINAL WRAPSTAR MEALS</h3>
+        </div>
+        <div class="spag6">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2022/08/ChickenRepublic_OriginalChickwhizzMeal_DARK-scaled.jpg"
+                alt="CHICKWHIZZ">
+            <h3>ORIGINAL CHICKWHIZZ MEAL</h3>
+        </div>
+    </div>
+    <div class="section7">
+        <div class="sub-7">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon6.png"
+                alt="tasty sides">
+            <h1>TASTY SIDES</h1>
+        </div>
+    </div>
+    <div class="foodmenu7">
+        <div class="fried7">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_Coleslaw.jpg"
+                alt="COLESLAW">
+            <h3>COLESLAW</h3>
+        </div>
+        <div class="jollof7">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_NewlyImprovedMoinMoin.jpg"
+                alt="MOINMOIN">
+            <h3>NEWLY IMPROVED MOIN-MOIN</h3>
+        </div>
+        <div class="spag7">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/DODO-CHUNKS-DARK.jpg" alt="DODO">
+            <h3>RIPE PLANTAIN CHUNKS (DODO)</h3>
+        </div>
+    </div>
+    <div class="section8">
+        <div class="sub-8">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_BannerIcon7-2.png"
+                alt="treats & beverages">
+            <h1>SWEET TREATS & BEVERAGES</h1>
+        </div>
+    </div>
+    <div class="foodmenu8">
+        <div class="fried8">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/CHICKEN-PIES-DARK.jpg"
+                alt="CHICKEN-PIES-DARK">
+            <h3>CHICKEN PIE</h3>
+        </div>
+        <div class="jollof8">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_MeatPies.jpg"
+                alt="MEAT PIES">
+            <h3>MEAT PIE</h3>
+        </div>
+        <div class="chips8">
+            <img src="https://www.chicken-republic.com/wp-content/uploads/2021/09/ChickenRepublic_Chips.jpg"
+                alt="CHIPS">
+            <h3>CHIPS</h3>
+        </div>
+        <div class="sweet8">
+            <img src="https://i.postimg.cc/8kjZqyZh/Chicken-Republic-Sweet-Treat.jpg" alt="SWEET"
+                style="height: 143px;">
+            <h3>SWEET TREATS</h3>
+        </div>
+        <div class="beverages8">
+            <img src="https://i.postimg.cc/0Qrrtq5K/Chicken-Republic-Beverages.jpg" alt="BEVERAGES">
+            <h3>BEVERAGES</h3>
+        </div>
+    </div>
+    <FOOter>
+        <P>Copyright 2022 <strong>Chicken Republic,</strong> All Right Reserved. Privacy Policy by <em>GENEVER
+                ASHINZE</em></P>
+    </FOOter>
+</body>
+
+</html>
